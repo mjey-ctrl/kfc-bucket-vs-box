@@ -109,7 +109,7 @@
 
   .hero { position: relative; padding: 40px 0 8px; }
   .hero::before {
-    content: ""; position: absolute; inset: -60px -20px auto -20px; height: 320px; z-index: -1;
+    content: ""; position: absolute; inset: -60px 0 auto 0; height: 320px; z-index: -1;
     background:
       radial-gradient(500px 220px at 20% 30%, var(--accent-soft), transparent 70%),
       radial-gradient(420px 200px at 85% 10%, rgba(251, 191, 36, 0.14), transparent 70%);
@@ -150,6 +150,8 @@
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
   .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--accent); }
+  .card .thumb { width: 100%; height: auto; aspect-ratio: 7 / 4; object-fit: cover; display: block; border-radius: 10px; margin-bottom: 12px; background: #292524; }
+  .img-frame.wide { aspect-ratio: 5 / 2; }
   .card h3 { margin: 0 0 6px; font-size: 1rem; letter-spacing: -0.01em; }
   .card p { margin: 0; font-size: .97rem; }
 
@@ -220,9 +222,9 @@
     <figure>
       <div class="img-frame">
         <img
-          src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=1200&h=675&q=80"
-          alt="A bucket of KFC fried chicken with fries and a burger on a table, ready to share"
-          width="1200" height="675" loading="eager"
+          src="images/kfc-1.jpg"
+          alt="A KFC-wrapped burger, a bowl of fries and a bucket of fried chicken pieces on a dark table"
+          width="1000" height="560" fetchpriority="high"
           onerror="this.style.display='none'">
       </div>
       <figcaption>Bucket for sharing, box for solo meals.</figcaption>
@@ -231,10 +233,12 @@
     <h2 id="difference">What is the difference between a KFC bucket and a box?</h2>
     <div class="grid">
       <div class="card">
+        <img class="thumb" src="images/kfc-2.jpg" alt="Close-up of a KFC bucket filled with crispy golden-brown fried chicken" width="700" height="400" loading="lazy" onerror="this.style.display='none'">
         <h3>Bucket</h3>
         <p>Several pieces of chicken in one container. Best for sharing with barkada or family.</p>
       </div>
       <div class="card">
+        <img class="thumb" src="images/kfc-3.jpg" alt="A KFC-wrapped burger beside a bowl of fries, an individual meal" width="700" height="400" loading="lazy" onerror="this.style.display='none'">
         <h3>Fully Loaded Box</h3>
         <p>Chicken with sides in a single serving. Best for one person.</p>
       </div>
@@ -267,6 +271,11 @@
 
     <h2 id="pick">Bucket or box, what's your pick?</h2>
     <p>Sharing with friends? Go bucket. Eating solo? Go box. Check today's prices before you order.</p>
+    <figure>
+      <div class="img-frame wide">
+        <img src="images/kfc-4.jpg" alt="Illuminated KFC sign glowing against a dark night sky" width="1000" height="400" loading="lazy" onerror="this.style.display='none'">
+      </div>
+    </figure>
     <a class="cta" href="https://www.kfc.com.ph/en/menu" target="_blank" rel="noopener noreferrer">View the official KFC menu →</a>
   </article>
 </main>
